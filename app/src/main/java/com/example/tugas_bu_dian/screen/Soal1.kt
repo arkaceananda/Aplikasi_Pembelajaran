@@ -1,24 +1,27 @@
 package com.example.tugas_bu_dian.screen
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
-import androidx.compose.material3.Card
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedCard
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -28,118 +31,114 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.tugas_bu_dian.utils.Bilangan
 
 @Composable
-fun ScreenSoal1(onBack: ()-> Unit) {
+fun ScreenSoal1(onBack: () -> Unit) {
     var input by remember { mutableStateOf("") }
     var hasil by remember { mutableStateOf("") }
-    Box(modifier = Modifier.fillMaxSize()) {
-        IconButton(
-            onClick = onBack,
-            modifier = Modifier
-                .padding(
-                    top = 6.dp,
-                    start = 4.dp
-                )
-                .align(Alignment.TopStart)
-        ) {
-            Icon(
-                imageVector = Icons.Default.ArrowBack,
-                contentDescription = "Back",
-                tint = MaterialTheme.colorScheme.primary
-            )
-        }
-    }
 
-    Column(
-        modifier = Modifier.fillMaxSize()
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White)
     ) {
-        TextField(
-            value = input,
-            onValueChange = {input = it},
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(
-                    start = 8.dp,
-                    end = 8.dp
-                ),
-            shape = RoundedCornerShape(
-                topStart = 10.dp,
-                topEnd = 10.dp
-            ),
-            label = {
-                Text("Masukkan angka: ")
-            }
-        )
-        Spacer(modifier = Modifier.padding(6.dp))
-        Button(
-            onClick = {
-                val angka = input.toIntOrNull()
-                if (angka != null) {
-                    val bilangan = Bilangan(angka)
-                    hasil = bilangan.checkNumber()
-                }
-                else {
-                    hasil = "Input tidak valid"
-                }
-            },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(
-                    top = 8.dp,
-                    start = 64.dp,
-                    end = 64.dp
-                )
+                .fillMaxSize()
+                .padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            Text("Check")
-        }
+            OutlinedTextField(
+                value = input,
+                onValueChange = { input = it },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 8.dp),
+                shape = RoundedCornerShape(8.dp),
+                label = { Text("Masukkan angka", color = Color.Gray) },
+                textStyle = TextStyle(color = Color.Black, fontSize = 16.sp),
+                colors = TextFieldDefaults.colors(
+                    focusedTextColor = Color.Black,
+                    unfocusedTextColor = Color.Black,
+                    focusedContainerColor = Color.Transparent,
+                    unfocusedContainerColor = Color.Transparent,
+                    focusedIndicatorColor = Color.Black,
+                    unfocusedIndicatorColor = Color.LightGray,
+                    cursorColor = Color.Black
+                ),
+                singleLine = true
+            )
 
-        Spacer(modifier = Modifier.padding(8.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
-        if (hasil.isNotEmpty()) {
-            if (hasil == "Input tidak valid") {
-                Text(
-                    text = hasil,
-                    modifier = Modifier.padding(16.dp),
-                    fontSize = 18.sp,
-                    color = Color.Red,
-                    fontWeight = FontWeight.Medium
-                )
-            } else {
-                Card(
+            Button(
+                onClick = {
+                    val angka = input.toIntOrNull()
+                    if (angka != null) {
+                        val bilangan = Bilangan(angka)
+                        hasil = bilangan.checkNumber()
+                    } else {
+                        hasil = "Input tidak valid"
+                    }
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 64.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.Black,
+                    contentColor = Color.White
+                ),
+                shape = RoundedCornerShape(8.dp)
+            ) {
+                Text("Check")
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            if (hasil.isNotEmpty()) {
+                OutlinedCard(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 16.dp),
-                    shape = RoundedCornerShape(16.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = Color.White.copy(alpha = 0.3f)
-                    ),
-                    border = androidx.compose.foundation.BorderStroke(2.dp, Color.Black),
-                    elevation = CardDefaults.cardElevation(
-                        defaultElevation = 0.dp
+                        .padding(horizontal = 32.dp),
+                    shape = RoundedCornerShape(8.dp),
+                    border = BorderStroke(1.dp, Color.LightGray),
+                    colors = CardDefaults.outlinedCardColors(
+                        containerColor = Color(0xFFF9F9F9)
                     )
                 ) {
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(24.dp),
+                            .padding(12.dp),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
                             text = hasil,
-                            fontSize = 20.sp,
-                            color = Color.Black,
-                            fontWeight = FontWeight.Bold
+                            fontSize = 14.sp,
+                            color = if (hasil == "Input tidak valid") Color.Red else Color.Black,
+                            fontWeight = FontWeight.Medium
                         )
                     }
                 }
             }
+        }
+
+        IconButton(
+            onClick = onBack,
+            modifier = Modifier
+                .padding(top = 18.dp, start = 8.dp)
+                .align(Alignment.TopStart)
+        ) {
+            Icon(
+                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                contentDescription = "Back",
+                tint = Color.Black
+            )
         }
     }
 }
