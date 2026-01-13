@@ -51,7 +51,6 @@ fun MainApp() {
         composition = composition,
         iterations = LottieConstants.IterateForever
     )
-
     when (screenAktif) {
         "menu" -> {
             Column(
