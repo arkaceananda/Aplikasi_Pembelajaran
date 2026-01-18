@@ -128,7 +128,7 @@ fun ScreenSoal2 (onBack: () -> Unit) {
                         average = deret.average()
                     }
                 },
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 64.dp),
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Black,
                     contentColor = Color.White
@@ -142,7 +142,7 @@ fun ScreenSoal2 (onBack: () -> Unit) {
 
             if (hasilDeret.isNotEmpty()) {
                 OutlinedCard(
-                    modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
                     shape = RoundedCornerShape(8.dp),
                     border = BorderStroke(1.dp, Color.LightGray),
                     colors = CardDefaults.outlinedCardColors(

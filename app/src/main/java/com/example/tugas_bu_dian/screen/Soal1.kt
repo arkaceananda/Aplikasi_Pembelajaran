@@ -88,7 +88,7 @@ fun ScreenSoal1(onBack: () -> Unit) {
                 },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 64.dp),
+                    .padding(horizontal = 8.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Black,
                     contentColor = Color.White
@@ -104,7 +104,7 @@ fun ScreenSoal1(onBack: () -> Unit) {
                 OutlinedCard(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 32.dp),
+                        .padding(horizontal = 8.dp),
                     shape = RoundedCornerShape(8.dp),
                     border = BorderStroke(1.dp, Color.LightGray),
                     colors = CardDefaults.outlinedCardColors(
