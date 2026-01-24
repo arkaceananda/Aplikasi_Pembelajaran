@@ -26,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableDoubleStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -42,8 +43,10 @@ fun ScreenSoal2 (onBack: () -> Unit) {
     var beda by remember { mutableStateOf("") }
     var jumlah by remember { mutableStateOf("") }
 
+    var errorMessage by remember { mutableStateOf("") }
+
     var hasilDeret by remember { mutableStateOf(listOf<Int>()) }
-    var average by remember { mutableStateOf(0.0) }
+    var average by remember { mutableDoubleStateOf(0.0) }
 
     Box(
         modifier = Modifier
@@ -73,7 +76,7 @@ fun ScreenSoal2 (onBack: () -> Unit) {
                     unfocusedIndicatorColor = Color.LightGray,
                     cursorColor = Color.Black
                 ),
-                singleLine = true
+                singleLine = true,
             )
             Spacer(modifier = Modifier.height(12.dp))
             OutlinedTextField(
@@ -186,7 +189,7 @@ fun ScreenSoal2 (onBack: () -> Unit) {
         IconButton(
             onClick = onBack,
             modifier = Modifier
-                .padding(top = 18.dp, start = 8.dp)
+                .padding(top = 20.dp, start = 8.dp)
                 .align(Alignment.TopStart)
         ) {
             Icon(

@@ -12,5 +12,3 @@ class Bilangan(val angka: Int) {
         }
     }
 }
-
-// Untuk mengerjakan nomor 1

@@ -71,7 +71,10 @@ fun ScreenSoal1(onBack: () -> Unit) {
                     unfocusedIndicatorColor = Color.LightGray,
                     cursorColor = Color.Black
                 ),
-                singleLine = true
+                singleLine = true,
+                keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(
+                    keyboardType = androidx.compose.ui.text.input.KeyboardType.Number
+                )
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -131,7 +134,7 @@ fun ScreenSoal1(onBack: () -> Unit) {
         IconButton(
             onClick = onBack,
             modifier = Modifier
-                .padding(top = 18.dp, start = 8.dp)
+                .padding(top = 20.dp, start = 8.dp)
                 .align(Alignment.TopStart)
         ) {
             Icon(
