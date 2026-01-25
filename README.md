@@ -7,8 +7,7 @@
 A simple Android application built with **Kotlin** and **Jetpack Compose**  
 that helps users analyze numbers and calculate arithmetic sequences.
 
-This project was created as a **logic & UI practice** and is suitable for
-school assignments such as **UKK / PKL preparation**.
+This project was created as a **logic & UI practice** .
 
 ---
 
