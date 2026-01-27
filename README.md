@@ -4,8 +4,7 @@
 
 # 📱 Kotlin Math App (Jetpack Compose)
 
-A simple Android application built with **Kotlin** and **Jetpack Compose**  
-that helps users analyze numbers and calculate arithmetic sequences.
+A simple Android app for number analysis and arithmetic sequences.
 
 This project was created as a **logic & UI practice** .
 
@@ -43,6 +42,14 @@ Calculate:
 - **Architecture**: Simple OOP (Logic separated from UI)
 
 ---
+## Screenshots
+
+| Home Screen | Number Classification | Arithmetic Sequence |
+|---------------------|---------------------|-------------------|
+| <img src="https://github.com/user-attachments/assets/773e1a3d-95e6-4a4a-a8cc-5a5e76fe7f74" width="260" /> | <img src="https://github.com/user-attachments/assets/2db4e11d-c73c-45a3-8fd4-42bcf07d750f" width="260"/> | <img src="https://github.com/user-attachments/assets/8a258610-9e9f-41a3-bde1-f25f4dcfb97f" width="260"/> |
+
+
+---
 
 ## 📂 Project Structure
 
@@ -67,74 +74,15 @@ com.example.projectname
 
 ````
 
----
-
-## 🧠 Core Logic Example
-
-### Number Classification
-```kotlin
-fun checkNumber(number: Int): String {
-    return when {
-        number == 0 -> "Zero"
-        number > 0 && number % 2 == 0 -> "Positive Even"
-        number > 0 -> "Positive Odd"
-        number % 2 == 0 -> "Negative Even"
-        else -> "Negative Odd"
-    }
-}
-````
-
-### Arithmetic Sequence
-
-```kotlin
-class ArithmeticSequence(
-    private val a: Int,
-    private val b: Int,
-    private val n: Int
-) {
-    fun sequence(): List<Int> =
-        (0 until n).map { a + it * b }
-
-    fun sum(): Int =
-        n * (2 * a + (n - 1) * b) / 2
-
-    fun average(): Double =
-        sum().toDouble() / n
-}
-```
-
----
-
-## 🚀 How to Run
-
-1. Clone this repository
-2. Open it with **Android Studio**
-3. Use **Empty Activity (Jetpack Compose)**
-4. Run on emulator or physical device
-
----
-
-## 🎯 Purpose
-
-* Practice **Kotlin fundamentals**
-* Understand **OOP basics**
-* Learn **Jetpack Compose UI**
-* Prepare for **UKK / Internship (PKL)**
 
 ---
 
 ## 👨‍💻 Author
 
 **Arka Aceananda**
-Student | Aspiring Mobile App Developer
-Focused on `Kotlin`, `Jetpack Compose`, and `Flutter`
 
 ---
 
 ## 📄 License
 
 This project is for educational purposes only.
-
-<div>
-  <img style="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&reversal=false&fontSize=70&fontColor=FFFFFF&fontAlign=50&fontAlignY=50&stroke=-&descSize=20&descAlign=50&descAlignY=50&color=random"  />
-</div>
