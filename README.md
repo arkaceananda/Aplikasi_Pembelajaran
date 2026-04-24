@@ -1,47 +1,3 @@
-<div>
-  <img style="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=header&reversal=true&fontSize=70&fontColor=FFFFFF&fontAlign=50&fontAlignY=50&stroke=-&descSize=20&descAlign=50&descAlignY=50&textBg=false&color=random"  />
-</div>
-
-# 📱 Kotlin Math App (Jetpack Compose)
-
-A simple Android app for number analysis and arithmetic sequences.
-
-This project was created as a **logic & UI practice** .
-
----
-
-## ✨ Features
-
-### 🔢 Number Classification
-Users can check whether a number is:
-- Zero
-- Positive or Negative
-- Odd or Even
-
-### 📐 Arithmetic Sequence Calculator
-Calculate:
-- First number (a)
-- Difference (b)
-- Total terms (n)
-- Arithmetic sequence list
-- Total sum
-- Average value
-
-### 🎨 Modern UI
-- Built using **`Jetpack Compose`**
-- Clean and minimal design
-- Fully native Android (no framework)
-
----
-
-## 🛠 Tech Stack
-
-- **Language**: `Kotlin`
-- **UI**: `Jetpack Compose`
-- **IDE**: `Android Studio`
-- **Architecture**: Simple OOP (Logic separated from UI)
-
----
 ## Screenshots
 
 | Home Screen | Number Classification | Arithmetic Sequence |
@@ -73,16 +29,3 @@ com.example.projectname
 └── MainActivity.kt
 
 ````
-
-
----
-
-## 👨‍💻 Author
-
-**Arka Aceananda**
-
----
-
-## 📄 License
-
-This project is for educational purposes only.
